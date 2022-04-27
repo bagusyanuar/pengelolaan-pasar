@@ -12,7 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::match(['post', 'get'], '/', [\App\Http\Controllers\AuthController::class, 'login']);
+Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout']);
+Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get( '/', [\App\Http\Controllers\Admin\AdminController::class, 'index']);
+    Route::get( '/tambah', [\App\Http\Controllers\Admin\AdminController::class, 'add_page']);
+    Route::post( '/create', [\App\Http\Controllers\Admin\AdminController::class, 'create']);
+    Route::get( '/edit/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'edit_page']);
+    Route::post( '/patch', [\App\Http\Controllers\Admin\AdminController::class, 'patch']);
+    Route::post( '/delete', [\App\Http\Controllers\Admin\AdminController::class, 'destroy']);
 });
+
