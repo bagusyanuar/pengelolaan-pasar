@@ -56,47 +56,21 @@
 @endsection
 
 @section('js')
+    <script src="{{ asset('/js/helper.js') }}"></script>
     <script type="text/javascript">
-
-        async function destroy(id) {
-            console.log(id)
-            try {
-                let response = await $.post('/admin/delete', {
-                    _token: '{{ csrf_token() }}',
-                    id: id
-                });
-                if (response['status'] === 200) {
-                    window.location.reload();
-                }
-            } catch (e) {
-                Swal.fire(
-                    'Terjadi Kesalahan',
-                    'Error Saat Menghapus Data',
-                    'error'
-                )
-            }
+        function destroy(id) {
+            AjaxPost('/admin/delete', {id}, function () {
+                window.location.reload();
+            });
         }
-
         $(document).ready(function () {
             $('#table-data').DataTable();
-
             $('.btn-delete').on('click', function (e) {
                 e.preventDefault();
                 let id = this.dataset.id;
-
-                Swal.fire({
-                    title: 'Apakah Anda Yakin Menghapus Data?',
-                    text: "Anda tidak bisa mengembalikan data yang sudah terhapus!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Ya'
-                }).then((result) => {
-                    if (result.value) {
-                        destroy(id);
-                    }
-                });
+                AlertConfirm('Judul', 'Text', function () {
+                    destroy(id);
+                })
             });
         });
     </script>

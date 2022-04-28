@@ -17,7 +17,7 @@ class AdminController extends CustomController
 
     public function index()
     {
-        $data = User::all();
+        $data = User::where('role', '=', 'admin')->get();
         return view('admin.pengguna.admin.index')->with(['data' => $data]);
     }
 
