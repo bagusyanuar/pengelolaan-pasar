@@ -29,6 +29,6 @@ class CreateMember extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('pedagang');
     }
 }

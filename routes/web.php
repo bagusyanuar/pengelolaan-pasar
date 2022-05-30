@@ -25,12 +25,30 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post( '/delete', [\App\Http\Controllers\Admin\AdminController::class, 'destroy']);
 });
 
-Route::group(['prefix' => 'member'], function () {
-    Route::get( '/', [\App\Http\Controllers\Admin\MemberController::class, 'index']);
-    Route::get( '/tambah', [\App\Http\Controllers\Admin\MemberController::class, 'add_page']);
-    Route::post( '/create', [\App\Http\Controllers\Admin\MemberController::class, 'create']);
-    Route::get( '/edit/{id}', [\App\Http\Controllers\Admin\MemberController::class, 'edit_page']);
-    Route::post( '/patch', [\App\Http\Controllers\Admin\MemberController::class, 'patch']);
-    Route::post( '/delete', [\App\Http\Controllers\Admin\MemberController::class, 'destroy']);
+Route::group(['prefix' => 'pedagang'], function () {
+    Route::get( '/', [\App\Http\Controllers\Admin\PedagangController::class, 'index']);
+    Route::get( '/tambah', [\App\Http\Controllers\Admin\PedagangController::class, 'add_page']);
+    Route::post( '/create', [\App\Http\Controllers\Admin\PedagangController::class, 'create']);
+    Route::get( '/edit/{id}', [\App\Http\Controllers\Admin\PedagangController::class, 'edit_page']);
+    Route::post( '/patch', [\App\Http\Controllers\Admin\PedagangController::class, 'patch']);
+    Route::post( '/delete', [\App\Http\Controllers\Admin\PedagangController::class, 'destroy']);
+});
+
+Route::group(['prefix' => 'kios'], function () {
+    Route::get( '/', [\App\Http\Controllers\Admin\KiosController::class, 'index']);
+    Route::get( '/tambah', [\App\Http\Controllers\Admin\KiosController::class, 'add_page']);
+    Route::post( '/create', [\App\Http\Controllers\Admin\KiosController::class, 'create']);
+    Route::get( '/edit/{id}', [\App\Http\Controllers\Admin\KiosController::class, 'edit_page']);
+    Route::post( '/patch', [\App\Http\Controllers\Admin\KiosController::class, 'patch']);
+    Route::post( '/delete', [\App\Http\Controllers\Admin\KiosController::class, 'destroy']);
+});
+
+Route::group(['prefix' => 'sarana'], function () {
+    Route::get( '/', [\App\Http\Controllers\Admin\SaranaController::class, 'index']);
+    Route::get( '/tambah', [\App\Http\Controllers\Admin\SaranaController::class, 'add_page']);
+    Route::post( '/create', [\App\Http\Controllers\Admin\SaranaController::class, 'create']);
+    Route::get( '/edit/{id}', [\App\Http\Controllers\Admin\SaranaController::class, 'edit_page']);
+    Route::post( '/patch', [\App\Http\Controllers\Admin\SaranaController::class, 'patch']);
+    Route::post( '/delete', [\App\Http\Controllers\Admin\SaranaController::class, 'destroy']);
 });
 

@@ -51,58 +51,40 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="nav-header" style="padding: 0.5rem 1rem 0.5rem 1rem;">
-                        Master Data
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-users"></i>
-                            <p>
-                                Pengguna
-                                <i class="right fa fa-angle-down"></i>
-                            </p>
+                    <li class="nav-item">
+                        <a href="/admin"
+                           class="nav-link">
+                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                            <p>Admin</p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/admin"
-                                   class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                                    <p>Admin</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/member"
-                                   class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                                    <p>Member</p>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-briefcase"></i>
-                            <p>
-                                Transaksi
-                                <i class="right fa fa-angle-down"></i>
-                            </p>
+                    <li class="nav-item">
+                        <a href="/pedagang"
+                           class="nav-link">
+                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                            <p>Pedagang</p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/penerimaan"
-                                   class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                                    <p>Penerimaan</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/pengembalian"
-                                   class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                                    <p>Pengembalian</p>
-                                </a>
-                            </li>
-                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/kios"
+                           class="nav-link">
+                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                            <p>Kios</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/sarana"
+                           class="nav-link">
+                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                            <p>Sarana</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pedagang"
+                           class="nav-link">
+                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                            <p>Keluhan</p>
+                        </a>
                     </li>
                 </nav>
             </ul>

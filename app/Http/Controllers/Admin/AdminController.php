@@ -17,13 +17,13 @@ class AdminController extends CustomController
 
     public function index()
     {
-        $data = User::where('role', '=', 'admin')->get();
-        return view('admin.pengguna.admin.index')->with(['data' => $data]);
+        $data = User::all();
+        return view('admin.master.admin.index')->with(['data' => $data]);
     }
 
     public function add_page()
     {
-        return view('admin.pengguna.admin.add');
+        return view('admin.master.admin.add');
     }
 
     public function create()
@@ -44,7 +44,7 @@ class AdminController extends CustomController
     public function edit_page($id)
     {
         $data = User::findOrFail($id);
-        return view('admin.pengguna.admin.edit')->with(['data' => $data]);
+        return view('admin.master.admin.edit')->with(['data' => $data]);
     }
 
     public function patch()

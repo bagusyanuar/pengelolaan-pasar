@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKios extends Migration
+class CreateKeluhan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateKios extends Migration
      */
     public function up()
     {
-        Schema::create('kios', function (Blueprint $table) {
+        Schema::create('keluhan', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('pedagang_id')->unsigned()->nullable();
-            $table->string('nama');
+            $table->bigInteger('pedagang_id')->unsigned();
+            $table->text('deskripsi');
             $table->timestamps();
             $table->foreign('pedagang_id')->references('id')->on('pedagang');
         });
@@ -29,6 +29,6 @@ class CreateKios extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kios');
+        Schema::dropIfExists('keluhan');
     }
 }
