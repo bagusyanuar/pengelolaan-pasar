@@ -16,3 +16,24 @@
     padding: 0 0;
     background-color: inherit;
 }
+
+.primary-pills {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+}
+
+.warning-pills {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #ffc107;
+    color: black;
+}
+
+.success-pills {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+}

@@ -52,3 +52,12 @@ Route::group(['prefix' => 'sarana'], function () {
     Route::post( '/delete', [\App\Http\Controllers\Admin\SaranaController::class, 'destroy']);
 });
 
+Route::group(['prefix' => 'keluhan'], function () {
+    Route::get( '/', [\App\Http\Controllers\Admin\KeluhanController::class, 'index']);
+    Route::get( '/tambah', [\App\Http\Controllers\Admin\KeluhanController::class, 'add_page']);
+    Route::post( '/create', [\App\Http\Controllers\Admin\KeluhanController::class, 'create']);
+    Route::get( '/edit/{id}', [\App\Http\Controllers\Admin\KeluhanController::class, 'edit_page']);
+    Route::post( '/patch', [\App\Http\Controllers\Admin\KeluhanController::class, 'patch']);
+    Route::post( '/delete', [\App\Http\Controllers\Admin\KeluhanController::class, 'destroy']);
+});
+

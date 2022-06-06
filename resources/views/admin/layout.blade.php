@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/pedagang"
+                        <a href="/keluhan"
                            class="nav-link">
                             <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
                             <p>Keluhan</p>

@@ -14,5 +14,12 @@ class Keluhan extends Model
     protected $fillable = [
         'pedagang_id',
         'deskripsi',
+        'tanggal',
+        'status',
     ];
+
+    public function pedagang()
+    {
+        return $this->belongsTo(Pedagang::class, 'pedagang_id');
+    }
 }
