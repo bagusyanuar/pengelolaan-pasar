@@ -61,3 +61,9 @@ Route::group(['prefix' => 'keluhan'], function () {
     Route::post( '/delete', [\App\Http\Controllers\Admin\KeluhanController::class, 'destroy']);
 });
 
+Route::group(['prefix' => 'laporan-keluhan'], function () {
+    Route::get( '/', [\App\Http\Controllers\Admin\KeluhanController::class, 'laporan_page']);
+    Route::get( '/data', [\App\Http\Controllers\Admin\KeluhanController::class, 'get_data_laporan_keluhan']);
+    Route::get( '/cetak', [\App\Http\Controllers\Admin\KeluhanController::class, 'cetak_laporan_keluhan']);
+});
+

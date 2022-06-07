@@ -86,6 +86,13 @@
                             <p>Keluhan</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/laporan-keluhan"
+                           class="nav-link">
+                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                            <p>Laporan Keluhan</p>
+                        </a>
+                    </li>
                 </nav>
             </ul>
         </div>

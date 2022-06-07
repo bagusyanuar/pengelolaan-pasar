@@ -8,6 +8,7 @@ use App\Helper\CustomController;
 use App\Models\Keluhan;
 use App\Models\Pedagang;
 use App\Models\Sarana;
+use Carbon\Carbon;
 
 class KeluhanController extends CustomController
 {
@@ -56,12 +57,14 @@ class KeluhanController extends CustomController
     {
         try {
             $id = $this->postField('id');
-            $sarana = Sarana::find($id);
+            $keluhan = Keluhan::find($id);
             $data = [
-                'nama' => $this->postField('nama'),
-                'qty' => $this->postField('qty'),
+                'pedagang_id' => $this->postField('pedagang'),
+                'deskripsi' => $this->postField('deskripsi'),
+                'tanggal' => $this->postField('tanggal'),
+                'status' => $this->postField('status'),
             ];
-            $sarana->update($data);
+            $keluhan->update($data);
             return redirect('/keluhan')->with(['success' => 'Berhasil Merubah Data...']);
         } catch (\Exception $e) {
             return redirect()->back()->with(['failed' => 'Terjadi Kesalahan' . $e->getMessage()]);
@@ -72,10 +75,42 @@ class KeluhanController extends CustomController
     {
         try {
             $id = $this->postField('id');
-            Sarana::destroy($id);
+            Keluhan::destroy($id);
             return $this->jsonResponse('success', 200);
         } catch (\Exception $e) {
             return $this->jsonResponse('failed', 500);
         }
+    }
+
+    public function laporan_page()
+    {
+        return view('admin.laporan.keluhan');
+    }
+
+    public function get_data_laporan_keluhan()
+    {
+        try {
+            $tgl1 = $this->field('tgl1') ?? Carbon::now();
+            $tgl2 = $this->field('tgl2') ?? Carbon::now();
+            $data = Keluhan::with('pedagang')
+                ->whereBetween('tanggal', [$tgl1, $tgl2])
+                ->get();
+            return $this->basicDataTables($data);
+        }catch (\Exception $e) {
+            return $this->basicDataTables([]);
+        }
+    }
+    public function cetak_laporan_keluhan()
+    {
+        $tgl1 = $this->field('tgl1') ?? Carbon::now();
+        $tgl2 = $this->field('tgl2') ?? Carbon::now();
+        $data = Keluhan::with('pedagang')
+            ->whereBetween('tanggal', [$tgl1, $tgl2])
+            ->get();
+        return $this->convertToPdf('cetak.keluhan', [
+            'data' => $data,
+            'tgl1' => $tgl1,
+            'tgl2' => $tgl2,
+        ]);
     }
 }

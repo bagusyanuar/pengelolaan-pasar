@@ -62,6 +62,14 @@
                                 <textarea rows="3" class="form-control" id="deskripsi" placeholder="Isi Keluhan"
                                           name="deskripsi">{{ $data->deskripsi }}</textarea>
                             </div>
+                            <div class="form-group w-100">
+                                <label for="status">Pedagang</label>
+                                <select class="form-control" name="status" id="status">
+                                    <option value="menunggu" {{ $data->status == 'menunggu' ? 'selected' : '' }}>Menunggu</option>
+                                    <option value="proses" {{ $data->status == 'proses' ? 'selected' : '' }}>Proses</option>
+                                    <option value="selesai" {{ $data->status == 'selesai' ? 'selected' : '' }}>Selesai</option>
+                                </select>
+                            </div>
                             <div class="w-100 mb-2 mt-3 text-right">
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
