@@ -50,6 +50,7 @@ Route::group(['prefix' => 'sarana'], function () {
     Route::get( '/edit/{id}', [\App\Http\Controllers\Admin\SaranaController::class, 'edit_page']);
     Route::post( '/patch', [\App\Http\Controllers\Admin\SaranaController::class, 'patch']);
     Route::post( '/delete', [\App\Http\Controllers\Admin\SaranaController::class, 'destroy']);
+
 });
 
 Route::group(['prefix' => 'keluhan'], function () {
@@ -59,6 +60,22 @@ Route::group(['prefix' => 'keluhan'], function () {
     Route::get( '/edit/{id}', [\App\Http\Controllers\Admin\KeluhanController::class, 'edit_page']);
     Route::post( '/patch', [\App\Http\Controllers\Admin\KeluhanController::class, 'patch']);
     Route::post( '/delete', [\App\Http\Controllers\Admin\KeluhanController::class, 'destroy']);
+});
+
+Route::group(['prefix' => 'pengajuan'], function () {
+    Route::get( '/', [\App\Http\Controllers\Admin\PengajuanController::class, 'index']);
+    Route::get( '/tambah', [\App\Http\Controllers\Admin\PengajuanController::class, 'add_page']);
+    Route::post( '/create', [\App\Http\Controllers\Admin\PengajuanController::class, 'create']);
+    Route::get( '/edit/{id}', [\App\Http\Controllers\Admin\PengajuanController::class, 'edit_page']);
+    Route::post( '/patch', [\App\Http\Controllers\Admin\PengajuanController::class, 'patch']);
+    Route::post( '/delete', [\App\Http\Controllers\Admin\PengajuanController::class, 'destroy']);
+    Route::match(['post', 'get'], '/proses/{id}', [\App\Http\Controllers\Admin\PengajuanController::class, 'proses']);
+});
+
+Route::group(['prefix' => 'laporan-pengajuan'], function () {
+    Route::get( '/', [\App\Http\Controllers\Admin\PengajuanController::class, 'laporan_pengajuan']);
+    Route::get( '/data', [\App\Http\Controllers\Admin\PengajuanController::class, 'laporan_pengajuan_data']);
+    Route::get( '/cetak', [\App\Http\Controllers\Admin\PengajuanController::class, 'laporan_pengajuan_cetak']);
 });
 
 Route::group(['prefix' => 'laporan-keluhan'], function () {

@@ -37,3 +37,10 @@
     background-color: #28a745;
     color: white;
 }
+
+.danger-pills {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+}

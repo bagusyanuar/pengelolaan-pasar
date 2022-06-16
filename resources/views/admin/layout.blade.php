@@ -51,48 +51,122 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/admin"
-                           class="nav-link">
-                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                            <p>Admin</p>
-                        </a>
+                    <li class="nav-header" style="padding: 0.5rem 1rem 0.5rem 1rem;">
+                        Master
                     </li>
-                    <li class="nav-item">
-                        <a href="/pedagang"
-                           class="nav-link">
-                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                            <p>Pedagang</p>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-users"></i>
+                            <p>
+                                Pengguna
+                                <i class="right fa fa-angle-down"></i>
+                            </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Admin</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/pedagang"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Pedagang</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="/kios"
-                           class="nav-link">
-                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                            <p>Kios</p>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-database"></i>
+                            <p>
+                                Data
+                                <i class="right fa fa-angle-down"></i>
+                            </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/kios"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Kios</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/sarana"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Sarana</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="/sarana"
-                           class="nav-link">
-                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                            <p>Sarana</p>
+
+                    <li class="nav-header" style="padding: 0.5rem 1rem 0.5rem 1rem;">
+                        Transaksi
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-book"></i>
+                            <p>
+                                Transaksi
+                                <i class="right fa fa-angle-down"></i>
+                            </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/pengajuan"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Pengajuan Berdagang</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/keluhan"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Keluhan</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="/keluhan"
-                           class="nav-link">
-                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                            <p>Keluhan</p>
+
+                    <li class="nav-header" style="padding: 0.5rem 1rem 0.5rem 1rem;">
+                        Laporan
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-bar-chart"></i>
+                            <p>
+                                Laporan
+                                <i class="right fa fa-angle-down"></i>
+                            </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/laporan-pengajuan"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Laporan Pengajuan</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/laporan-keluhan"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Laporan Keluhan</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="/laporan-keluhan"
-                           class="nav-link">
-                            <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
-                            <p>Laporan Keluhan</p>
-                        </a>
-                    </li>
+
+
                 </nav>
             </ul>
         </div>

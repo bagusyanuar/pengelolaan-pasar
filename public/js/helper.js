@@ -39,7 +39,6 @@ async function AjaxPost(url, param = {}, onSuccess = function () {
 }
 
 function DataTableGenerator(element, url = '/', col = [], colDef = [], data = function () {}, extConfig = {}) {
-    console.log(data);
     let baseConfig = {
         scrollX: true,
         processing: true,
