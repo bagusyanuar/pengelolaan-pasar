@@ -26,6 +26,7 @@
                     class="fa fa-bars"></i></a>
         </li>
     </ul>
+    {{ auth()->user()->role }}
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
             <a href="/logout" class="nav-link navbar-link-item">Logout</a>
@@ -51,6 +52,7 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
+                    @if(auth()->user()->role == 'admin')
                     <li class="nav-header" style="padding: 0.5rem 1rem 0.5rem 1rem;">
                         Master
                     </li>
@@ -90,6 +92,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
+                                <a href="/pegawai"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Pegawai</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="/kios"
                                    class="nav-link">
                                     <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
@@ -119,6 +128,13 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/jadwal"
+                                   class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon" aria-hidden="true"></i>
+                                    <p>Jadwal</p>
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a href="/pengajuan"
                                    class="nav-link">
@@ -166,7 +182,15 @@
                         </ul>
                     </li>
 
-
+                    @else
+                        <li class="nav-item">
+                            <a href="/keluhan-saya"
+                               class="nav-link">
+                                <i class="fa fa-sticky-note-o nav-icon" aria-hidden="true"></i>
+                                <p>Keluhan</p>
+                            </a>
+                        </li>
+                    @endif
                 </nav>
             </ul>
         </div>
