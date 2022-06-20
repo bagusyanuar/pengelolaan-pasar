@@ -87,9 +87,13 @@ class JadwalController extends CustomController
     {
         try {
             $id = $this->postField('id');
-            Keluhan::destroy($id);
+            DB::beginTransaction();
+            JadwalPegawai::with('jadwal')->where('jadwal_id', '=', $id)->delete();
+            Jadwal::destroy($id);
+            DB::commit();
             return $this->jsonResponse('success', 200);
         } catch (\Exception $e) {
+            DB::rollBack();
             return $this->jsonResponse('failed', 500);
         }
     }
@@ -149,5 +153,17 @@ class JadwalController extends CustomController
         } catch (\Exception $e) {
             return $this->basicDataTables([]);
         }
+    }
+
+    public function jadwal_detail_page($id)
+    {
+        $data = Jadwal::with('jadwal_pegawai.pegawai')->where('id', '=', $id)->firstOrFail();
+        return view('admin.transaksi.jadwal.detail')->with(['data' => $data]);
+    }
+
+    public function jadwal_detail_cetak($id)
+    {
+        $data = Jadwal::with('jadwal_pegawai.pegawai')->where('id', '=', $id)->firstOrFail();
+        return $this->convertToPdf('admin.laporan.jadwal.cetak', ['data' => $data]);
     }
 }

@@ -83,6 +83,8 @@ Route::group(['prefix' => 'jadwal'], function () {
     Route::post( '/delete-jadwal', [\App\Http\Controllers\Admin\JadwalController::class, 'delete_data_jadwal_pegawai']);
     Route::post( '/append/{id}', [\App\Http\Controllers\Admin\JadwalController::class, 'append_jadwal_pegawai_detail']);
     Route::get( '/data/{id}', [\App\Http\Controllers\Admin\JadwalController::class, 'data_jadwal_pegawai_detail']);
+    Route::get( '/detail/{id}', [\App\Http\Controllers\Admin\JadwalController::class, 'jadwal_detail_page']);
+    Route::get( '/detail/{id}/cetak', [\App\Http\Controllers\Admin\JadwalController::class, 'jadwal_detail_cetak']);
 });
 
 Route::group(['prefix' => 'pengajuan'], function () {
